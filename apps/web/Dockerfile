@@ -19,7 +19,7 @@ ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 RUN pnpm --filter @cloudops/web exec vite build
 
 # ── serve ───────────────────────────────────────────────────────────
-FROM nginxinc/nginx-unprivileged:1.27-alpine
+FROM nginxinc/nginx-unprivileged:1.31-alpine
 COPY --from=build /app/apps/web/dist /usr/share/nginx/html
 COPY apps/web/nginx.conf.template /etc/nginx/templates/default.conf.template
 # Only substitute our variable (nginx's own $uri etc. must survive envsubst).
