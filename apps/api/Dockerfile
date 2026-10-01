@@ -1,6 +1,6 @@
 # CloudOps API — Express app + in-process background workers.
 # Includes the Azure CLI (and the resource-graph extension) for provider sync.
-FROM node:22-bookworm-slim
+FROM node:26-bookworm-slim
 
 # Azure CLI (Debian) + curl for the installer.
 RUN apt-get update \
